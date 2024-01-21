@@ -1,5 +1,6 @@
 # RPA = Robotic Process Automation (Automação Robótica de Processos)
 import pyautogui as pag
+import pandas as pd
 import time
 
 pag.PAUSE = 1.5
@@ -15,8 +16,24 @@ pag.hotkey("win", "up")
 pag.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pag.press("enter")
 
+time.sleep(3)
+
 pag.press("tab")
 pag.write("pythonimpressionador@gmail.com")
 pag.press("tab")
 pag.write("python2024")
 pag.press("enter")
+
+time.sleep(2)
+pag.PAUSE = 0.5
+
+table = pd.read_csv("products.csv")
+for line in table.index:
+  pag.click(x=549, y=262, clicks=2)
+  for column in table.columns:
+    cell = table.loc[line, column]
+    if not pd.isna(cell):
+      pag.write(str(cell))
+    pag.press("tab")
+  pag.press("enter")
+  pag.scroll(1000)
