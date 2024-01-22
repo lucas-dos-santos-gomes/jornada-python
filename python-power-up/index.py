@@ -13,7 +13,7 @@ time.sleep(2)
 
 pag.click(x=247, y=644)
 pag.hotkey("win", "up")
-pag.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
+pag.write("https://lucas-dos-santos-gomes.github.io/sistema-python-power-up/")
 pag.press("enter")
 
 time.sleep(3)
@@ -25,7 +25,7 @@ pag.write("python2024")
 pag.press("enter")
 
 time.sleep(2)
-pag.PAUSE = 0.5
+pag.PAUSE = 0.15
 
 table = pd.read_csv("products.csv")
 for line in table.index:
